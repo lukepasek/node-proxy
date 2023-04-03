@@ -66,9 +66,13 @@ function onRequest(client_req, client_res) {
       console.error(err)
     }
   }
+  
+  let hostname = process.argv[2];
+  
+  console.log('redirecting requests to '+hostname);
 
   var options = {
-    hostname: 'HOSTNAME_HERE',
+    hostname: hostname,
     port: 80,
     path: client_req.url,
     method: client_req.method,
